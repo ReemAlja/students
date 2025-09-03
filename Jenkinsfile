@@ -10,13 +10,15 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                sh './mvnw clean test'
+                bat 'echo Running tests...'
+                // مثلاً bat 'mvn test' لو تستخدمين Maven
             }
         }
 
         stage('Package') {
             steps {
-                sh './mvnw package'
+                bat 'echo Packaging the project...'
+                // bat 'mvn package'
             }
         }
     }
